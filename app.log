@@ -1,0 +1,257 @@
+2025-11-11 02:00:58,823 - __main__ - INFO - Using temp directory: C:\Users\Filip\OneDrive\Documents\DATA\project-bolt-sb1-m2sjjvyu\EX-tractor\temp
+2025-11-11 02:00:58,823 - __main__ - INFO - Initial files in temp directory: ['extracted_texts.txt']
+2025-11-11 02:00:58,842 - werkzeug - WARNING -  * Debugger is active!
+2025-11-11 02:00:58,845 - werkzeug - INFO -  * Debugger PIN: 125-127-887
+2025-11-11 02:01:30,841 - werkzeug - INFO -  * Detected change in 'C:\\Users\\Filip\\OneDrive\\Documents\\DATA\\project-bolt-sb1-m2sjjvyu\\EX-tractor\\app.py', reloading
+2025-11-11 02:01:31,483 - __main__ - INFO - Using temp directory: C:\Users\Filip\OneDrive\Documents\DATA\project-bolt-sb1-m2sjjvyu\EX-tractor\temp
+2025-11-11 02:01:31,484 - __main__ - INFO - Initial files in temp directory: ['extracted_texts.txt']
+2025-11-11 02:01:31,501 - werkzeug - WARNING -  * Debugger is active!
+2025-11-11 02:01:31,505 - werkzeug - INFO -  * Debugger PIN: 125-127-887
+2025-11-11 02:01:54,456 - __main__ - INFO - Request: GET /download/tmpr86rcgja.jpg
+2025-11-11 02:01:54,457 - __main__ - INFO - Headers: {'Host': 'localhost:5000', 'Connection': 'keep-alive', 'Sec-Ch-Ua-Platform': '"Windows"', 'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36', 'Sec-Ch-Ua': '"Chromium";v="142", "Brave";v="142", "Not_A Brand";v="99"', 'Sec-Ch-Ua-Mobile': '?0', 'Accept': 'image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8', 'Sec-Gpc': '1', 'Accept-Language': 'es-419,es;q=0.8', 'Sec-Fetch-Site': 'same-site', 'Sec-Fetch-Mode': 'no-cors', 'Sec-Fetch-Dest': 'image', 'Referer': 'http://localhost:5173/', 'Accept-Encoding': 'gzip, deflate, br, zstd', 'Cookie': 'ajs_anonymous_id=91d5e73a-02a1-4b3a-93ff-ad7056f68969'}
+2025-11-11 02:01:54,457 - __main__ - INFO - Request: GET /download/tmplwgmoh87.jpg
+2025-11-11 02:01:54,457 - __main__ - INFO - Request to download file: tmpr86rcgja.jpg
+2025-11-11 02:01:54,457 - __main__ - INFO - Headers: {'Host': 'localhost:5000', 'Connection': 'keep-alive', 'Sec-Ch-Ua-Platform': '"Windows"', 'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36', 'Sec-Ch-Ua': '"Chromium";v="142", "Brave";v="142", "Not_A Brand";v="99"', 'Sec-Ch-Ua-Mobile': '?0', 'Accept': 'image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8', 'Sec-Gpc': '1', 'Accept-Language': 'es-419,es;q=0.8', 'Sec-Fetch-Site': 'same-site', 'Sec-Fetch-Mode': 'no-cors', 'Sec-Fetch-Dest': 'image', 'Referer': 'http://localhost:5173/', 'Accept-Encoding': 'gzip, deflate, br, zstd', 'Cookie': 'ajs_anonymous_id=91d5e73a-02a1-4b3a-93ff-ad7056f68969'}
+2025-11-11 02:01:54,457 - __main__ - INFO - Full path: C:\Users\Filip\OneDrive\Documents\DATA\project-bolt-sb1-m2sjjvyu\EX-tractor\temp\tmpr86rcgja.jpg
+2025-11-11 02:01:54,457 - __main__ - INFO - Request to download file: tmplwgmoh87.jpg
+2025-11-11 02:01:54,457 - __main__ - ERROR - File not found: C:\Users\Filip\OneDrive\Documents\DATA\project-bolt-sb1-m2sjjvyu\EX-tractor\temp\tmpr86rcgja.jpg
+2025-11-11 02:01:54,457 - __main__ - INFO - Full path: C:\Users\Filip\OneDrive\Documents\DATA\project-bolt-sb1-m2sjjvyu\EX-tractor\temp\tmplwgmoh87.jpg
+2025-11-11 02:01:54,457 - __main__ - INFO - Files in temp directory: ['extracted_texts.txt']
+2025-11-11 02:01:54,457 - __main__ - ERROR - File not found: C:\Users\Filip\OneDrive\Documents\DATA\project-bolt-sb1-m2sjjvyu\EX-tractor\temp\tmplwgmoh87.jpg
+2025-11-11 02:01:54,459 - __main__ - INFO - Response: 404 NOT FOUND {'available_files': ['extracted_texts.txt'], 'error': 'File not found', 'requested_file': 'tmpr86rcgja.jpg'}
+2025-11-11 02:01:54,459 - __main__ - INFO - Files in temp directory: ['extracted_texts.txt']
+2025-11-11 02:01:54,459 - werkzeug - INFO - 127.0.0.1 - - [11/Nov/2025 02:01:54] "[33mGET /download/tmpr86rcgja.jpg HTTP/1.1[0m" 404 -
+2025-11-11 02:01:54,461 - __main__ - INFO - Response: 404 NOT FOUND {'available_files': ['extracted_texts.txt'], 'error': 'File not found', 'requested_file': 'tmplwgmoh87.jpg'}
+2025-11-11 02:01:54,461 - werkzeug - INFO - 127.0.0.1 - - [11/Nov/2025 02:01:54] "[33mGET /download/tmplwgmoh87.jpg HTTP/1.1[0m" 404 -
+2025-11-11 02:03:41,636 - werkzeug - INFO -  * Detected change in 'C:\\Users\\Filip\\OneDrive\\Documents\\DATA\\project-bolt-sb1-m2sjjvyu\\EX-tractor\\app.py', reloading
+2025-11-11 02:03:42,261 - __main__ - INFO - Using temp directory: C:\Users\Filip\OneDrive\Documents\DATA\project-bolt-sb1-m2sjjvyu\EX-tractor\temp
+2025-11-11 02:03:42,261 - __main__ - INFO - Initial files in temp directory: ['extracted_texts.txt']
+2025-11-11 02:03:42,280 - werkzeug - WARNING -  * Debugger is active!
+2025-11-11 02:03:42,284 - werkzeug - INFO -  * Debugger PIN: 125-127-887
+2025-11-11 02:03:55,104 - werkzeug - INFO -  * Detected change in 'C:\\Users\\Filip\\OneDrive\\Documents\\DATA\\project-bolt-sb1-m2sjjvyu\\EX-tractor\\app.py', reloading
+2025-11-11 02:03:55,725 - __main__ - INFO - Using temp directory: C:\Users\Filip\OneDrive\Documents\DATA\project-bolt-sb1-m2sjjvyu\EX-tractor\temp
+2025-11-11 02:03:55,725 - __main__ - INFO - Initial files in temp directory: ['extracted_texts.txt']
+2025-11-11 02:03:55,744 - werkzeug - WARNING -  * Debugger is active!
+2025-11-11 02:03:55,748 - werkzeug - INFO -  * Debugger PIN: 125-127-887
+2025-11-11 02:04:09,612 - __main__ - INFO - Request: GET /download/tmpr86rcgja.jpg
+2025-11-11 02:04:09,612 - __main__ - INFO - Headers: {'Host': 'localhost:5000', 'Connection': 'keep-alive', 'Sec-Ch-Ua-Platform': '"Windows"', 'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36', 'Sec-Ch-Ua': '"Chromium";v="142", "Brave";v="142", "Not_A Brand";v="99"', 'Sec-Ch-Ua-Mobile': '?0', 'Accept': 'image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8', 'Sec-Gpc': '1', 'Accept-Language': 'es-419,es;q=0.8', 'Sec-Fetch-Site': 'same-site', 'Sec-Fetch-Mode': 'no-cors', 'Sec-Fetch-Dest': 'image', 'Referer': 'http://localhost:5173/', 'Accept-Encoding': 'gzip, deflate, br, zstd', 'Cookie': 'ajs_anonymous_id=91d5e73a-02a1-4b3a-93ff-ad7056f68969'}
+2025-11-11 02:04:09,613 - __main__ - INFO - Request: GET /download/tmplwgmoh87.jpg
+2025-11-11 02:04:09,614 - __main__ - INFO - Request to download file: tmpr86rcgja.jpg
+2025-11-11 02:04:09,614 - __main__ - INFO - Headers: {'Host': 'localhost:5000', 'Connection': 'keep-alive', 'Sec-Ch-Ua-Platform': '"Windows"', 'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36', 'Sec-Ch-Ua': '"Chromium";v="142", "Brave";v="142", "Not_A Brand";v="99"', 'Sec-Ch-Ua-Mobile': '?0', 'Accept': 'image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8', 'Sec-Gpc': '1', 'Accept-Language': 'es-419,es;q=0.8', 'Sec-Fetch-Site': 'same-site', 'Sec-Fetch-Mode': 'no-cors', 'Sec-Fetch-Dest': 'image', 'Referer': 'http://localhost:5173/', 'Accept-Encoding': 'gzip, deflate, br, zstd', 'Cookie': 'ajs_anonymous_id=91d5e73a-02a1-4b3a-93ff-ad7056f68969'}
+2025-11-11 02:04:09,614 - __main__ - INFO - Resolved path: C:\Users\Filip\OneDrive\Documents\DATA\project-bolt-sb1-m2sjjvyu\EX-tractor\temp\tmpr86rcgja.jpg
+2025-11-11 02:04:09,614 - __main__ - INFO - Request to download file: tmplwgmoh87.jpg
+2025-11-11 02:04:09,615 - __main__ - INFO - Resolved path: C:\Users\Filip\OneDrive\Documents\DATA\project-bolt-sb1-m2sjjvyu\EX-tractor\temp\tmplwgmoh87.jpg
+2025-11-11 02:04:09,615 - __main__ - ERROR - File not found: C:\Users\Filip\OneDrive\Documents\DATA\project-bolt-sb1-m2sjjvyu\EX-tractor\temp\tmpr86rcgja.jpg
+2025-11-11 02:04:09,615 - __main__ - ERROR - File not found: C:\Users\Filip\OneDrive\Documents\DATA\project-bolt-sb1-m2sjjvyu\EX-tractor\temp\tmplwgmoh87.jpg
+2025-11-11 02:04:09,616 - __main__ - INFO - Available files in C:\Users\Filip\OneDrive\Documents\DATA\project-bolt-sb1-m2sjjvyu\EX-tractor\temp: ['extracted_texts.txt']
+2025-11-11 02:04:09,616 - __main__ - INFO - Available files in C:\Users\Filip\OneDrive\Documents\DATA\project-bolt-sb1-m2sjjvyu\EX-tractor\temp: ['extracted_texts.txt']
+2025-11-11 02:04:09,617 - __main__ - INFO - Response: 404 NOT FOUND {'available_files': ['extracted_texts.txt'], 'error': 'File not found', 'requested_file': 'tmpr86rcgja.jpg'}
+2025-11-11 02:04:09,617 - __main__ - INFO - Response: 404 NOT FOUND {'available_files': ['extracted_texts.txt'], 'error': 'File not found', 'requested_file': 'tmplwgmoh87.jpg'}
+2025-11-11 02:04:09,621 - werkzeug - INFO - 127.0.0.1 - - [11/Nov/2025 02:04:09] "[33mGET /download/tmpr86rcgja.jpg HTTP/1.1[0m" 404 -
+2025-11-11 02:04:09,621 - werkzeug - INFO - 127.0.0.1 - - [11/Nov/2025 02:04:09] "[33mGET /download/tmplwgmoh87.jpg HTTP/1.1[0m" 404 -
+2025-11-11 02:04:17,254 - werkzeug - INFO -  * Detected change in 'C:\\Users\\Filip\\OneDrive\\Documents\\DATA\\project-bolt-sb1-m2sjjvyu\\EX-tractor\\app.py', reloading
+2025-11-11 02:04:17,932 - __main__ - INFO - Using temp directory: C:\Users\Filip\OneDrive\Documents\DATA\project-bolt-sb1-m2sjjvyu\EX-tractor\temp
+2025-11-11 02:04:17,932 - __main__ - INFO - Initial files in temp directory: ['extracted_texts.txt']
+2025-11-11 02:04:17,949 - werkzeug - WARNING -  * Debugger is active!
+2025-11-11 02:04:17,954 - werkzeug - INFO -  * Debugger PIN: 125-127-887
+2025-11-11 02:04:32,561 - __main__ - INFO - Request: GET /download/tmpr86rcgja.jpg
+2025-11-11 02:04:32,562 - __main__ - INFO - Headers: {'Host': 'localhost:5000', 'Connection': 'keep-alive', 'Sec-Ch-Ua-Platform': '"Windows"', 'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36', 'Sec-Ch-Ua': '"Chromium";v="142", "Brave";v="142", "Not_A Brand";v="99"', 'Sec-Ch-Ua-Mobile': '?0', 'Accept': 'image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8', 'Sec-Gpc': '1', 'Accept-Language': 'es-419,es;q=0.8', 'Sec-Fetch-Site': 'same-site', 'Sec-Fetch-Mode': 'no-cors', 'Sec-Fetch-Dest': 'image', 'Referer': 'http://localhost:5173/', 'Accept-Encoding': 'gzip, deflate, br, zstd', 'Cookie': 'ajs_anonymous_id=91d5e73a-02a1-4b3a-93ff-ad7056f68969'}
+2025-11-11 02:04:32,562 - __main__ - INFO - Request: GET /download/tmplwgmoh87.jpg
+2025-11-11 02:04:32,562 - __main__ - INFO - Request to download file: tmpr86rcgja.jpg
+2025-11-11 02:04:32,562 - __main__ - INFO - Headers: {'Host': 'localhost:5000', 'Connection': 'keep-alive', 'Sec-Ch-Ua-Platform': '"Windows"', 'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36', 'Sec-Ch-Ua': '"Chromium";v="142", "Brave";v="142", "Not_A Brand";v="99"', 'Sec-Ch-Ua-Mobile': '?0', 'Accept': 'image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8', 'Sec-Gpc': '1', 'Accept-Language': 'es-419,es;q=0.8', 'Sec-Fetch-Site': 'same-site', 'Sec-Fetch-Mode': 'no-cors', 'Sec-Fetch-Dest': 'image', 'Referer': 'http://localhost:5173/', 'Accept-Encoding': 'gzip, deflate, br, zstd', 'Cookie': 'ajs_anonymous_id=91d5e73a-02a1-4b3a-93ff-ad7056f68969'}
+2025-11-11 02:04:32,563 - __main__ - INFO - Resolved path: C:\Users\Filip\OneDrive\Documents\DATA\project-bolt-sb1-m2sjjvyu\EX-tractor\temp\tmpr86rcgja.jpg
+2025-11-11 02:04:32,563 - __main__ - INFO - Request to download file: tmplwgmoh87.jpg
+2025-11-11 02:04:32,563 - __main__ - INFO - Resolved path: C:\Users\Filip\OneDrive\Documents\DATA\project-bolt-sb1-m2sjjvyu\EX-tractor\temp\tmplwgmoh87.jpg
+2025-11-11 02:04:32,563 - __main__ - ERROR - File not found: C:\Users\Filip\OneDrive\Documents\DATA\project-bolt-sb1-m2sjjvyu\EX-tractor\temp\tmpr86rcgja.jpg
+2025-11-11 02:04:32,564 - __main__ - ERROR - File not found: C:\Users\Filip\OneDrive\Documents\DATA\project-bolt-sb1-m2sjjvyu\EX-tractor\temp\tmplwgmoh87.jpg
+2025-11-11 02:04:32,564 - __main__ - INFO - Available files in C:\Users\Filip\OneDrive\Documents\DATA\project-bolt-sb1-m2sjjvyu\EX-tractor\temp: ['extracted_texts.txt']
+2025-11-11 02:04:32,564 - __main__ - INFO - Available files in C:\Users\Filip\OneDrive\Documents\DATA\project-bolt-sb1-m2sjjvyu\EX-tractor\temp: ['extracted_texts.txt']
+2025-11-11 02:04:32,564 - __main__ - INFO - Response: 404 NOT FOUND {'available_files': ['extracted_texts.txt'], 'error': 'File not found', 'requested_file': 'tmpr86rcgja.jpg'}
+2025-11-11 02:04:32,564 - werkzeug - INFO - 127.0.0.1 - - [11/Nov/2025 02:04:32] "[33mGET /download/tmpr86rcgja.jpg HTTP/1.1[0m" 404 -
+2025-11-11 02:04:32,566 - __main__ - INFO - Response: 404 NOT FOUND {'available_files': ['extracted_texts.txt'], 'error': 'File not found', 'requested_file': 'tmplwgmoh87.jpg'}
+2025-11-11 02:04:32,566 - werkzeug - INFO - 127.0.0.1 - - [11/Nov/2025 02:04:32] "[33mGET /download/tmplwgmoh87.jpg HTTP/1.1[0m" 404 -
+2025-11-11 02:04:57,199 - werkzeug - INFO -  * Detected change in 'C:\\Users\\Filip\\OneDrive\\Documents\\DATA\\project-bolt-sb1-m2sjjvyu\\EX-tractor\\app.py', reloading
+2025-11-11 02:04:57,841 - __main__ - INFO - Using temp directory: C:\Users\Filip\OneDrive\Documents\DATA\project-bolt-sb1-m2sjjvyu\EX-tractor\temp
+2025-11-11 02:04:57,842 - __main__ - INFO - Initial files in temp directory: ['extracted_texts.txt']
+2025-11-11 02:04:57,859 - werkzeug - WARNING -  * Debugger is active!
+2025-11-11 02:04:57,863 - werkzeug - INFO -  * Debugger PIN: 125-127-887
+2025-11-11 02:05:04,345 - werkzeug - INFO -  * Detected change in 'C:\\Users\\Filip\\OneDrive\\Documents\\DATA\\project-bolt-sb1-m2sjjvyu\\EX-tractor\\app.py', reloading
+2025-11-11 02:05:04,951 - __main__ - INFO - Using temp directory: C:\Users\Filip\OneDrive\Documents\DATA\project-bolt-sb1-m2sjjvyu\EX-tractor\temp
+2025-11-11 02:05:04,951 - __main__ - INFO - Initial files in temp directory: ['extracted_texts.txt']
+2025-11-11 02:05:04,969 - werkzeug - WARNING -  * Debugger is active!
+2025-11-11 02:05:04,973 - werkzeug - INFO -  * Debugger PIN: 125-127-887
+2025-11-11 02:05:22,112 - __main__ - INFO - Request: GET /download/tmpr86rcgja.jpg
+2025-11-11 02:05:22,113 - __main__ - INFO - Headers: {'Host': 'localhost:5000', 'Connection': 'keep-alive', 'Sec-Ch-Ua-Platform': '"Windows"', 'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36', 'Sec-Ch-Ua': '"Chromium";v="142", "Brave";v="142", "Not_A Brand";v="99"', 'Sec-Ch-Ua-Mobile': '?0', 'Accept': 'image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8', 'Sec-Gpc': '1', 'Accept-Language': 'es-419,es;q=0.8', 'Sec-Fetch-Site': 'same-site', 'Sec-Fetch-Mode': 'no-cors', 'Sec-Fetch-Dest': 'image', 'Referer': 'http://localhost:5173/', 'Accept-Encoding': 'gzip, deflate, br, zstd', 'Cookie': 'ajs_anonymous_id=91d5e73a-02a1-4b3a-93ff-ad7056f68969'}
+2025-11-11 02:05:22,113 - __main__ - INFO - Request: GET /download/tmplwgmoh87.jpg
+2025-11-11 02:05:22,114 - __main__ - INFO - Request to download file: tmpr86rcgja.jpg
+2025-11-11 02:05:22,114 - __main__ - INFO - Headers: {'Host': 'localhost:5000', 'Connection': 'keep-alive', 'Sec-Ch-Ua-Platform': '"Windows"', 'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36', 'Sec-Ch-Ua': '"Chromium";v="142", "Brave";v="142", "Not_A Brand";v="99"', 'Sec-Ch-Ua-Mobile': '?0', 'Accept': 'image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8', 'Sec-Gpc': '1', 'Accept-Language': 'es-419,es;q=0.8', 'Sec-Fetch-Site': 'same-site', 'Sec-Fetch-Mode': 'no-cors', 'Sec-Fetch-Dest': 'image', 'Referer': 'http://localhost:5173/', 'Accept-Encoding': 'gzip, deflate, br, zstd', 'Cookie': 'ajs_anonymous_id=91d5e73a-02a1-4b3a-93ff-ad7056f68969'}
+2025-11-11 02:05:22,114 - __main__ - INFO - Resolved path: C:\Users\Filip\OneDrive\Documents\DATA\project-bolt-sb1-m2sjjvyu\EX-tractor\temp\tmpr86rcgja.jpg
+2025-11-11 02:05:22,115 - __main__ - INFO - Request to download file: tmplwgmoh87.jpg
+2025-11-11 02:05:22,115 - __main__ - INFO - Resolved path: C:\Users\Filip\OneDrive\Documents\DATA\project-bolt-sb1-m2sjjvyu\EX-tractor\temp\tmplwgmoh87.jpg
+2025-11-11 02:05:22,115 - __main__ - ERROR - File not found: C:\Users\Filip\OneDrive\Documents\DATA\project-bolt-sb1-m2sjjvyu\EX-tractor\temp\tmpr86rcgja.jpg
+2025-11-11 02:05:22,115 - __main__ - ERROR - File not found: C:\Users\Filip\OneDrive\Documents\DATA\project-bolt-sb1-m2sjjvyu\EX-tractor\temp\tmplwgmoh87.jpg
+2025-11-11 02:05:22,115 - __main__ - INFO - Available files in C:\Users\Filip\OneDrive\Documents\DATA\project-bolt-sb1-m2sjjvyu\EX-tractor\temp: ['extracted_texts.txt']
+2025-11-11 02:05:22,115 - __main__ - INFO - Available files in C:\Users\Filip\OneDrive\Documents\DATA\project-bolt-sb1-m2sjjvyu\EX-tractor\temp: ['extracted_texts.txt']
+2025-11-11 02:05:22,116 - __main__ - INFO - Response: 404 NOT FOUND {'available_files': ['extracted_texts.txt'], 'error': 'File not found', 'requested_file': 'tmpr86rcgja.jpg'}
+2025-11-11 02:05:22,116 - werkzeug - INFO - 127.0.0.1 - - [11/Nov/2025 02:05:22] "[33mGET /download/tmpr86rcgja.jpg HTTP/1.1[0m" 404 -
+2025-11-11 02:05:22,118 - __main__ - INFO - Response: 404 NOT FOUND {'available_files': ['extracted_texts.txt'], 'error': 'File not found', 'requested_file': 'tmplwgmoh87.jpg'}
+2025-11-11 02:05:22,118 - werkzeug - INFO - 127.0.0.1 - - [11/Nov/2025 02:05:22] "[33mGET /download/tmplwgmoh87.jpg HTTP/1.1[0m" 404 -
+2025-11-11 02:15:16,099 - __main__ - INFO - Request: GET /download/tmpr86rcgja.jpg
+2025-11-11 02:15:16,100 - __main__ - INFO - Request: GET /download/tmplwgmoh87.jpg
+2025-11-11 02:15:16,100 - __main__ - INFO - Headers: {'Host': 'localhost:5000', 'Connection': 'keep-alive', 'Sec-Ch-Ua-Platform': '"Windows"', 'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36', 'Sec-Ch-Ua': '"Chromium";v="142", "Brave";v="142", "Not_A Brand";v="99"', 'Sec-Ch-Ua-Mobile': '?0', 'Accept': 'image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8', 'Sec-Gpc': '1', 'Accept-Language': 'es-419,es;q=0.8', 'Sec-Fetch-Site': 'same-site', 'Sec-Fetch-Mode': 'no-cors', 'Sec-Fetch-Dest': 'image', 'Referer': 'http://localhost:5173/', 'Accept-Encoding': 'gzip, deflate, br, zstd', 'Cookie': 'ajs_anonymous_id=91d5e73a-02a1-4b3a-93ff-ad7056f68969'}
+2025-11-11 02:15:16,101 - __main__ - INFO - Headers: {'Host': 'localhost:5000', 'Connection': 'keep-alive', 'Sec-Ch-Ua-Platform': '"Windows"', 'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36', 'Sec-Ch-Ua': '"Chromium";v="142", "Brave";v="142", "Not_A Brand";v="99"', 'Sec-Ch-Ua-Mobile': '?0', 'Accept': 'image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8', 'Sec-Gpc': '1', 'Accept-Language': 'es-419,es;q=0.8', 'Sec-Fetch-Site': 'same-site', 'Sec-Fetch-Mode': 'no-cors', 'Sec-Fetch-Dest': 'image', 'Referer': 'http://localhost:5173/', 'Accept-Encoding': 'gzip, deflate, br, zstd', 'Cookie': 'ajs_anonymous_id=91d5e73a-02a1-4b3a-93ff-ad7056f68969'}
+2025-11-11 02:15:16,101 - __main__ - INFO - Request to download file: tmpr86rcgja.jpg
+2025-11-11 02:15:16,101 - __main__ - INFO - Request to download file: tmplwgmoh87.jpg
+2025-11-11 02:15:16,101 - __main__ - INFO - Resolved path: C:\Users\Filip\OneDrive\Documents\DATA\project-bolt-sb1-m2sjjvyu\EX-tractor\temp\tmpr86rcgja.jpg
+2025-11-11 02:15:16,101 - __main__ - INFO - Resolved path: C:\Users\Filip\OneDrive\Documents\DATA\project-bolt-sb1-m2sjjvyu\EX-tractor\temp\tmplwgmoh87.jpg
+2025-11-11 02:15:16,101 - __main__ - ERROR - File not found: C:\Users\Filip\OneDrive\Documents\DATA\project-bolt-sb1-m2sjjvyu\EX-tractor\temp\tmpr86rcgja.jpg
+2025-11-11 02:15:16,101 - __main__ - ERROR - File not found: C:\Users\Filip\OneDrive\Documents\DATA\project-bolt-sb1-m2sjjvyu\EX-tractor\temp\tmplwgmoh87.jpg
+2025-11-11 02:15:16,101 - __main__ - INFO - Available files in C:\Users\Filip\OneDrive\Documents\DATA\project-bolt-sb1-m2sjjvyu\EX-tractor\temp: ['extracted_texts.txt', 'tmp_35sxc05.jpg']
+2025-11-11 02:15:16,101 - __main__ - INFO - Available files in C:\Users\Filip\OneDrive\Documents\DATA\project-bolt-sb1-m2sjjvyu\EX-tractor\temp: ['extracted_texts.txt', 'tmp_35sxc05.jpg']
+2025-11-11 02:15:16,102 - __main__ - INFO - Response: 404 NOT FOUND {'available_files': ['extracted_texts.txt', 'tmp_35sxc05.jpg'], 'error': 'File not found', 'requested_file': 'tmpr86rcgja.jpg'}
+2025-11-11 02:15:16,102 - werkzeug - INFO - 127.0.0.1 - - [11/Nov/2025 02:15:16] "[33mGET /download/tmpr86rcgja.jpg HTTP/1.1[0m" 404 -
+2025-11-11 02:15:16,102 - __main__ - INFO - Response: 404 NOT FOUND {'available_files': ['extracted_texts.txt', 'tmp_35sxc05.jpg'], 'error': 'File not found', 'requested_file': 'tmplwgmoh87.jpg'}
+2025-11-11 02:15:16,102 - werkzeug - INFO - 127.0.0.1 - - [11/Nov/2025 02:15:16] "[33mGET /download/tmplwgmoh87.jpg HTTP/1.1[0m" 404 -
+2025-11-11 02:15:25,112 - __main__ - INFO - Request: GET /download/tmpr86rcgja.jpg
+2025-11-11 02:15:25,113 - __main__ - INFO - Headers: {'Host': 'localhost:5000', 'Connection': 'keep-alive', 'Sec-Ch-Ua-Platform': '"Windows"', 'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36', 'Sec-Ch-Ua': '"Chromium";v="142", "Brave";v="142", "Not_A Brand";v="99"', 'Sec-Ch-Ua-Mobile': '?0', 'Accept': 'image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8', 'Sec-Gpc': '1', 'Accept-Language': 'es-419,es;q=0.8', 'Sec-Fetch-Site': 'same-site', 'Sec-Fetch-Mode': 'no-cors', 'Sec-Fetch-Dest': 'image', 'Referer': 'http://localhost:5173/', 'Accept-Encoding': 'gzip, deflate, br, zstd', 'Cookie': 'ajs_anonymous_id=91d5e73a-02a1-4b3a-93ff-ad7056f68969'}
+2025-11-11 02:15:25,113 - __main__ - INFO - Request to download file: tmpr86rcgja.jpg
+2025-11-11 02:15:25,113 - __main__ - INFO - Resolved path: C:\Users\Filip\OneDrive\Documents\DATA\project-bolt-sb1-m2sjjvyu\EX-tractor\temp\tmpr86rcgja.jpg
+2025-11-11 02:15:25,113 - __main__ - ERROR - File not found: C:\Users\Filip\OneDrive\Documents\DATA\project-bolt-sb1-m2sjjvyu\EX-tractor\temp\tmpr86rcgja.jpg
+2025-11-11 02:15:25,114 - __main__ - INFO - Available files in C:\Users\Filip\OneDrive\Documents\DATA\project-bolt-sb1-m2sjjvyu\EX-tractor\temp: ['extracted_texts.txt', 'tmp_35sxc05.jpg']
+2025-11-11 02:15:25,115 - __main__ - INFO - Response: 404 NOT FOUND {'available_files': ['extracted_texts.txt', 'tmp_35sxc05.jpg'], 'error': 'File not found', 'requested_file': 'tmpr86rcgja.jpg'}
+2025-11-11 02:15:25,115 - werkzeug - INFO - 127.0.0.1 - - [11/Nov/2025 02:15:25] "[33mGET /download/tmpr86rcgja.jpg HTTP/1.1[0m" 404 -
+2025-11-11 02:15:25,424 - __main__ - INFO - Request: GET /download/tmplwgmoh87.jpg
+2025-11-11 02:15:25,424 - __main__ - INFO - Headers: {'Host': 'localhost:5000', 'Connection': 'keep-alive', 'Sec-Ch-Ua-Platform': '"Windows"', 'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36', 'Sec-Ch-Ua': '"Chromium";v="142", "Brave";v="142", "Not_A Brand";v="99"', 'Sec-Ch-Ua-Mobile': '?0', 'Accept': 'image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8', 'Sec-Gpc': '1', 'Accept-Language': 'es-419,es;q=0.8', 'Sec-Fetch-Site': 'same-site', 'Sec-Fetch-Mode': 'no-cors', 'Sec-Fetch-Dest': 'image', 'Referer': 'http://localhost:5173/', 'Accept-Encoding': 'gzip, deflate, br, zstd', 'Cookie': 'ajs_anonymous_id=91d5e73a-02a1-4b3a-93ff-ad7056f68969'}
+2025-11-11 02:15:25,424 - __main__ - INFO - Request to download file: tmplwgmoh87.jpg
+2025-11-11 02:15:25,424 - __main__ - INFO - Resolved path: C:\Users\Filip\OneDrive\Documents\DATA\project-bolt-sb1-m2sjjvyu\EX-tractor\temp\tmplwgmoh87.jpg
+2025-11-11 02:15:25,425 - __main__ - ERROR - File not found: C:\Users\Filip\OneDrive\Documents\DATA\project-bolt-sb1-m2sjjvyu\EX-tractor\temp\tmplwgmoh87.jpg
+2025-11-11 02:15:25,425 - __main__ - INFO - Available files in C:\Users\Filip\OneDrive\Documents\DATA\project-bolt-sb1-m2sjjvyu\EX-tractor\temp: ['extracted_texts.txt', 'tmp_35sxc05.jpg']
+2025-11-11 02:15:25,425 - __main__ - INFO - Response: 404 NOT FOUND {'available_files': ['extracted_texts.txt', 'tmp_35sxc05.jpg'], 'error': 'File not found', 'requested_file': 'tmplwgmoh87.jpg'}
+2025-11-11 02:15:25,425 - werkzeug - INFO - 127.0.0.1 - - [11/Nov/2025 02:15:25] "[33mGET /download/tmplwgmoh87.jpg HTTP/1.1[0m" 404 -
+2025-11-11 02:15:44,353 - __main__ - INFO - Request: OPTIONS /extract-image
+2025-11-11 02:15:44,353 - __main__ - INFO - Headers: {'Host': 'localhost:5000', 'Connection': 'keep-alive', 'Accept': '*/*', 'Access-Control-Request-Method': 'POST', 'Access-Control-Request-Headers': 'content-type', 'Origin': 'http://localhost:5173', 'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36', 'Sec-Fetch-Mode': 'cors', 'Sec-Fetch-Site': 'same-site', 'Sec-Fetch-Dest': 'empty', 'Referer': 'http://localhost:5173/', 'Accept-Encoding': 'gzip, deflate, br, zstd', 'Accept-Language': 'es-419,es;q=0.9'}
+2025-11-11 02:15:44,353 - __main__ - INFO - Response: 200 OK [Non-JSON response]
+2025-11-11 02:15:44,354 - werkzeug - INFO - 127.0.0.1 - - [11/Nov/2025 02:15:44] "OPTIONS /extract-image HTTP/1.1" 200 -
+2025-11-11 02:15:44,619 - __main__ - INFO - Request: POST /extract-image
+2025-11-11 02:15:44,619 - __main__ - INFO - Headers: {'Host': 'localhost:5000', 'Connection': 'keep-alive', 'Content-Length': '50', 'Sec-Ch-Ua-Platform': '"Windows"', 'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36', 'Accept': 'application/json, text/plain, */*', 'Sec-Ch-Ua': '"Chromium";v="142", "Brave";v="142", "Not_A Brand";v="99"', 'Content-Type': 'application/json', 'Sec-Ch-Ua-Mobile': '?0', 'Sec-Gpc': '1', 'Accept-Language': 'es-419,es;q=0.8', 'Origin': 'http://localhost:5173', 'Sec-Fetch-Site': 'same-site', 'Sec-Fetch-Mode': 'cors', 'Sec-Fetch-Dest': 'empty', 'Referer': 'http://localhost:5173/', 'Accept-Encoding': 'gzip, deflate, br, zstd'}
+2025-11-11 02:15:44,619 - __main__ - INFO - Body: {"url":"https://www.instagram.com/p/DQ5npaZjlP-/"}
+2025-11-11 02:15:44,619 - __main__ - INFO - Obteniendo imagen de Instagram para URL: https://www.instagram.com/p/DQ5npaZjlP-/
+2025-11-11 02:15:44,619 - __main__ - INFO - Iniciando navegador Chrome...
+2025-11-11 02:15:47,404 - __main__ - INFO - Accediendo a la URL: https://www.instagram.com/p/DQ5npaZjlP-/
+2025-11-11 02:15:50,624 - __main__ - INFO - Esperando a que la página cargue...
+2025-11-11 02:15:55,763 - __main__ - INFO - Captura de pantalla guardada en: C:\Users\Filip\OneDrive\Documents\DATA\project-bolt-sb1-m2sjjvyu\EX-tractor\temp\instagram_page.png
+2025-11-11 02:15:55,764 - __main__ - INFO - Intentando selector 1/5: //img[contains(@alt, 'Photo by')]
+2025-11-11 02:15:55,791 - __main__ - INFO - Se encontraron 2 elementos con el selector: //img[contains(@alt, 'Photo by')]
+2025-11-11 02:15:55,827 - __main__ - INFO - Imagen encontrada con selector //img[contains(@alt, 'Photo by')]
+2025-11-11 02:15:55,830 - __main__ - INFO - URL de la imagen encontrada: https://scontent.cdninstagram.com/v/t51.82787-15/576546597_18543559357056189_5273287393397638911_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=1&ig_cache_key=Mzc2MzIxMzMzMzMwMzI4NDczNA%3D%3D.3-ccb1-7&ccb=1-7&_nc_sid=58cdad&efg=eyJ2ZW5jb2RlX3RhZyI6InhwaWRzLjEwODB4MTM1MC5zZHIuQzMifQ%3D%3D&_nc_ohc=xckR4ZzdPjAQ7kNvwEn5XG9&_nc_oc=Adk_B0J0MLSGgNMgweWkSQXANb5BK_ZwV3E4_75k21ui6wE_xXQjQhr1-QM-fuBrzb0&_nc_ad=z-m&_nc_cid=0&_nc_zt=23&_nc_ht=scontent.cdninstagram.com&_nc_gid=Pa_mmWQcTDVPTtLLndflHw&oh=00_AfjOvLFVAxOD_CSR5_XPraHTyePQiKN4UhIZMxDj2DYs0w&oe=6918A50C
+2025-11-11 02:15:55,830 - __main__ - INFO - Descargando imagen...
+2025-11-11 02:15:56,620 - __main__ - INFO - Imagen descargada exitosamente - Dimensiones: 1080x1350
+2025-11-11 02:15:58,734 - __main__ - INFO - Navegador cerrado correctamente
+2025-11-11 02:15:58,770 - __main__ - INFO - Saved file to C:\Users\Filip\OneDrive\Documents\DATA\project-bolt-sb1-m2sjjvyu\EX-tractor\temp\tmp75c871cb.jpg
+2025-11-11 02:15:58,770 - __main__ - INFO - Imagen guardada: C:\Users\Filip\OneDrive\Documents\DATA\project-bolt-sb1-m2sjjvyu\EX-tractor\temp\tmp75c871cb.jpg (1080x1350)
+2025-11-11 02:15:59,380 - __main__ - INFO - Extraído texto: Proteccion animal en TM:
+firman convenio para atender
+casos de abandono
+...
+2025-11-11 02:15:59,382 - __main__ - INFO - Response: 200 OK {'file_path': 'C:\\Users\\Filip\\OneDrive\\Documents\\DATA\\project-bolt-sb1-m2sjjvyu\\EX-tractor\\temp\\tmp75c871cb.jpg', 'filename': 'tmp75c871cb.jpg', 'image_url': 'http://localhost:5000/download/tmp75c871cb.jpg', 'success': True}
+2025-11-11 02:15:59,383 - werkzeug - INFO - 127.0.0.1 - - [11/Nov/2025 02:15:59] "POST /extract-image HTTP/1.1" 200 -
+2025-11-11 02:15:59,701 - __main__ - INFO - Request: GET /download/tmp75c871cb.jpg
+2025-11-11 02:15:59,701 - __main__ - INFO - Headers: {'Host': 'localhost:5000', 'Connection': 'keep-alive', 'Sec-Ch-Ua-Platform': '"Windows"', 'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36', 'Sec-Ch-Ua': '"Chromium";v="142", "Brave";v="142", "Not_A Brand";v="99"', 'Sec-Ch-Ua-Mobile': '?0', 'Accept': 'image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8', 'Sec-Gpc': '1', 'Accept-Language': 'es-419,es;q=0.8', 'Sec-Fetch-Site': 'same-site', 'Sec-Fetch-Mode': 'no-cors', 'Sec-Fetch-Dest': 'image', 'Referer': 'http://localhost:5173/', 'Accept-Encoding': 'gzip, deflate, br, zstd', 'Cookie': 'ajs_anonymous_id=91d5e73a-02a1-4b3a-93ff-ad7056f68969'}
+2025-11-11 02:15:59,702 - __main__ - INFO - Request to download file: tmp75c871cb.jpg
+2025-11-11 02:15:59,702 - __main__ - INFO - Resolved path: C:\Users\Filip\OneDrive\Documents\DATA\project-bolt-sb1-m2sjjvyu\EX-tractor\temp\tmp75c871cb.jpg
+2025-11-11 02:15:59,702 - __main__ - INFO - Serving file: C:\Users\Filip\OneDrive\Documents\DATA\project-bolt-sb1-m2sjjvyu\EX-tractor\temp\tmp75c871cb.jpg (MIME: image/jpeg)
+2025-11-11 02:15:59,710 - __main__ - INFO - Response: 200 OK [Non-JSON response]
+2025-11-11 02:15:59,710 - werkzeug - INFO - 127.0.0.1 - - [11/Nov/2025 02:15:59] "GET /download/tmp75c871cb.jpg HTTP/1.1" 200 -
+2025-11-11 02:18:22,477 - werkzeug - INFO -  * Detected change in 'C:\\Users\\Filip\\OneDrive\\Documents\\DATA\\project-bolt-sb1-m2sjjvyu\\EX-tractor\\pruebas\\instagram_service.py', reloading
+2025-11-11 02:18:23,099 - __main__ - INFO - Using temp directory: C:\Users\Filip\OneDrive\Documents\DATA\project-bolt-sb1-m2sjjvyu\EX-tractor\temp
+2025-11-11 02:18:23,099 - __main__ - INFO - Initial files in temp directory: ['extracted_texts.txt', 'instagram_page.png', 'tmp75c871cb.jpg', 'tmp_35sxc05.jpg']
+2025-11-11 02:18:23,118 - werkzeug - WARNING -  * Debugger is active!
+2025-11-11 02:18:23,126 - werkzeug - INFO -  * Debugger PIN: 125-127-887
+2025-11-11 02:22:00,084 - __main__ - INFO - Request: GET /download/tmpr86rcgja.jpg
+2025-11-11 02:22:00,084 - __main__ - INFO - Headers: {'Host': 'localhost:5000', 'Connection': 'keep-alive', 'Sec-Ch-Ua-Platform': '"Windows"', 'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36', 'Sec-Ch-Ua': '"Chromium";v="142", "Brave";v="142", "Not_A Brand";v="99"', 'Sec-Ch-Ua-Mobile': '?0', 'Accept': 'image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8', 'Sec-Gpc': '1', 'Accept-Language': 'es-419,es;q=0.8', 'Sec-Fetch-Site': 'same-site', 'Sec-Fetch-Mode': 'no-cors', 'Sec-Fetch-Dest': 'image', 'Referer': 'http://localhost:5173/', 'Accept-Encoding': 'gzip, deflate, br, zstd', 'Cookie': 'ajs_anonymous_id=91d5e73a-02a1-4b3a-93ff-ad7056f68969'}
+2025-11-11 02:22:00,084 - __main__ - INFO - Request: GET /download/tmplwgmoh87.jpg
+2025-11-11 02:22:00,084 - __main__ - INFO - Request to download file: tmpr86rcgja.jpg
+2025-11-11 02:22:00,086 - __main__ - INFO - Headers: {'Host': 'localhost:5000', 'Connection': 'keep-alive', 'Sec-Ch-Ua-Platform': '"Windows"', 'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36', 'Sec-Ch-Ua': '"Chromium";v="142", "Brave";v="142", "Not_A Brand";v="99"', 'Sec-Ch-Ua-Mobile': '?0', 'Accept': 'image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8', 'Sec-Gpc': '1', 'Accept-Language': 'es-419,es;q=0.8', 'Sec-Fetch-Site': 'same-site', 'Sec-Fetch-Mode': 'no-cors', 'Sec-Fetch-Dest': 'image', 'Referer': 'http://localhost:5173/', 'Accept-Encoding': 'gzip, deflate, br, zstd', 'Cookie': 'ajs_anonymous_id=91d5e73a-02a1-4b3a-93ff-ad7056f68969'}
+2025-11-11 02:22:00,086 - __main__ - INFO - Resolved path: C:\Users\Filip\OneDrive\Documents\DATA\project-bolt-sb1-m2sjjvyu\EX-tractor\temp\tmpr86rcgja.jpg
+2025-11-11 02:22:00,086 - __main__ - INFO - Request to download file: tmplwgmoh87.jpg
+2025-11-11 02:22:00,086 - __main__ - INFO - Resolved path: C:\Users\Filip\OneDrive\Documents\DATA\project-bolt-sb1-m2sjjvyu\EX-tractor\temp\tmplwgmoh87.jpg
+2025-11-11 02:22:00,086 - __main__ - ERROR - File not found: C:\Users\Filip\OneDrive\Documents\DATA\project-bolt-sb1-m2sjjvyu\EX-tractor\temp\tmpr86rcgja.jpg
+2025-11-11 02:22:00,087 - __main__ - ERROR - File not found: C:\Users\Filip\OneDrive\Documents\DATA\project-bolt-sb1-m2sjjvyu\EX-tractor\temp\tmplwgmoh87.jpg
+2025-11-11 02:22:00,087 - __main__ - INFO - Available files in C:\Users\Filip\OneDrive\Documents\DATA\project-bolt-sb1-m2sjjvyu\EX-tractor\temp: ['extracted_texts.txt', 'instagram_page.png', 'tmp75c871cb.jpg', 'tmp_35sxc05.jpg']
+2025-11-11 02:22:00,087 - __main__ - INFO - Available files in C:\Users\Filip\OneDrive\Documents\DATA\project-bolt-sb1-m2sjjvyu\EX-tractor\temp: ['extracted_texts.txt', 'instagram_page.png', 'tmp75c871cb.jpg', 'tmp_35sxc05.jpg']
+2025-11-11 02:22:00,087 - __main__ - INFO - Response: 404 NOT FOUND {'available_files': ['extracted_texts.txt', 'instagram_page.png', 'tmp75c871cb.jpg', 'tmp_35sxc05.jpg'], 'error': 'File not found', 'requested_file': 'tmpr86rcgja.jpg'}
+2025-11-11 02:22:00,088 - werkzeug - INFO - 127.0.0.1 - - [11/Nov/2025 02:22:00] "[33mGET /download/tmpr86rcgja.jpg HTTP/1.1[0m" 404 -
+2025-11-11 02:22:00,088 - __main__ - INFO - Response: 404 NOT FOUND {'available_files': ['extracted_texts.txt', 'instagram_page.png', 'tmp75c871cb.jpg', 'tmp_35sxc05.jpg'], 'error': 'File not found', 'requested_file': 'tmplwgmoh87.jpg'}
+2025-11-11 02:22:00,089 - werkzeug - INFO - 127.0.0.1 - - [11/Nov/2025 02:22:00] "[33mGET /download/tmplwgmoh87.jpg HTTP/1.1[0m" 404 -
+2025-11-11 02:22:54,419 - __main__ - INFO - Request: GET /download/tmpr86rcgja.jpg
+2025-11-11 02:22:54,419 - __main__ - INFO - Request: GET /download/tmplwgmoh87.jpg
+2025-11-11 02:22:54,420 - __main__ - INFO - Headers: {'Host': 'localhost:5000', 'Connection': 'keep-alive', 'Sec-Ch-Ua-Platform': '"Windows"', 'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36', 'Sec-Ch-Ua': '"Chromium";v="142", "Brave";v="142", "Not_A Brand";v="99"', 'Sec-Ch-Ua-Mobile': '?0', 'Accept': 'image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8', 'Sec-Gpc': '1', 'Accept-Language': 'es-419,es;q=0.8', 'Sec-Fetch-Site': 'same-site', 'Sec-Fetch-Mode': 'no-cors', 'Sec-Fetch-Dest': 'image', 'Referer': 'http://localhost:5173/', 'Accept-Encoding': 'gzip, deflate, br, zstd', 'Cookie': 'ajs_anonymous_id=91d5e73a-02a1-4b3a-93ff-ad7056f68969'}
+2025-11-11 02:22:54,420 - __main__ - INFO - Headers: {'Host': 'localhost:5000', 'Connection': 'keep-alive', 'Sec-Ch-Ua-Platform': '"Windows"', 'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36', 'Sec-Ch-Ua': '"Chromium";v="142", "Brave";v="142", "Not_A Brand";v="99"', 'Sec-Ch-Ua-Mobile': '?0', 'Accept': 'image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8', 'Sec-Gpc': '1', 'Accept-Language': 'es-419,es;q=0.8', 'Sec-Fetch-Site': 'same-site', 'Sec-Fetch-Mode': 'no-cors', 'Sec-Fetch-Dest': 'image', 'Referer': 'http://localhost:5173/', 'Accept-Encoding': 'gzip, deflate, br, zstd', 'Cookie': 'ajs_anonymous_id=91d5e73a-02a1-4b3a-93ff-ad7056f68969'}
+2025-11-11 02:22:54,420 - __main__ - INFO - Request to download file: tmpr86rcgja.jpg
+2025-11-11 02:22:54,420 - __main__ - INFO - Request to download file: tmplwgmoh87.jpg
+2025-11-11 02:22:54,420 - __main__ - INFO - Resolved path: C:\Users\Filip\OneDrive\Documents\DATA\project-bolt-sb1-m2sjjvyu\EX-tractor\temp\tmpr86rcgja.jpg
+2025-11-11 02:22:54,420 - __main__ - INFO - Resolved path: C:\Users\Filip\OneDrive\Documents\DATA\project-bolt-sb1-m2sjjvyu\EX-tractor\temp\tmplwgmoh87.jpg
+2025-11-11 02:22:54,421 - __main__ - ERROR - File not found: C:\Users\Filip\OneDrive\Documents\DATA\project-bolt-sb1-m2sjjvyu\EX-tractor\temp\tmpr86rcgja.jpg
+2025-11-11 02:22:54,421 - __main__ - ERROR - File not found: C:\Users\Filip\OneDrive\Documents\DATA\project-bolt-sb1-m2sjjvyu\EX-tractor\temp\tmplwgmoh87.jpg
+2025-11-11 02:22:54,422 - __main__ - INFO - Available files in C:\Users\Filip\OneDrive\Documents\DATA\project-bolt-sb1-m2sjjvyu\EX-tractor\temp: ['extracted_texts.txt', 'instagram_page.png', 'tmp75c871cb.jpg', 'tmp_35sxc05.jpg']
+2025-11-11 02:22:54,422 - __main__ - INFO - Available files in C:\Users\Filip\OneDrive\Documents\DATA\project-bolt-sb1-m2sjjvyu\EX-tractor\temp: ['extracted_texts.txt', 'instagram_page.png', 'tmp75c871cb.jpg', 'tmp_35sxc05.jpg']
+2025-11-11 02:22:54,423 - __main__ - INFO - Response: 404 NOT FOUND {'available_files': ['extracted_texts.txt', 'instagram_page.png', 'tmp75c871cb.jpg', 'tmp_35sxc05.jpg'], 'error': 'File not found', 'requested_file': 'tmplwgmoh87.jpg'}
+2025-11-11 02:22:54,423 - __main__ - INFO - Response: 404 NOT FOUND {'available_files': ['extracted_texts.txt', 'instagram_page.png', 'tmp75c871cb.jpg', 'tmp_35sxc05.jpg'], 'error': 'File not found', 'requested_file': 'tmpr86rcgja.jpg'}
+2025-11-11 02:22:54,423 - werkzeug - INFO - 127.0.0.1 - - [11/Nov/2025 02:22:54] "[33mGET /download/tmplwgmoh87.jpg HTTP/1.1[0m" 404 -
+2025-11-11 02:22:54,424 - werkzeug - INFO - 127.0.0.1 - - [11/Nov/2025 02:22:54] "[33mGET /download/tmpr86rcgja.jpg HTTP/1.1[0m" 404 -
+2025-11-11 02:23:52,793 - werkzeug - INFO -  * Detected change in 'C:\\Users\\Filip\\OneDrive\\Documents\\DATA\\project-bolt-sb1-m2sjjvyu\\EX-tractor\\pruebas\\instagram_service.py', reloading
+2025-11-11 02:23:53,479 - __main__ - INFO - Using temp directory: C:\Users\Filip\OneDrive\Documents\DATA\project-bolt-sb1-m2sjjvyu\EX-tractor\temp
+2025-11-11 02:23:53,479 - __main__ - INFO - Initial files in temp directory: ['extracted_texts.txt', 'instagram_page.png', 'tmp75c871cb.jpg', 'tmp_35sxc05.jpg']
+2025-11-11 02:23:53,499 - werkzeug - WARNING -  * Debugger is active!
+2025-11-11 02:23:53,503 - werkzeug - INFO -  * Debugger PIN: 125-127-887
+2025-11-11 02:26:09,702 - __main__ - INFO - Request: GET /download/tmpr86rcgja.jpg
+2025-11-11 02:26:09,703 - __main__ - INFO - Headers: {'Host': 'localhost:5000', 'Connection': 'keep-alive', 'Sec-Ch-Ua-Platform': '"Windows"', 'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36', 'Sec-Ch-Ua': '"Chromium";v="142", "Brave";v="142", "Not_A Brand";v="99"', 'Sec-Ch-Ua-Mobile': '?0', 'Accept': 'image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8', 'Sec-Gpc': '1', 'Accept-Language': 'es-419,es;q=0.8', 'Sec-Fetch-Site': 'same-site', 'Sec-Fetch-Mode': 'no-cors', 'Sec-Fetch-Dest': 'image', 'Referer': 'http://localhost:5173/', 'Accept-Encoding': 'gzip, deflate, br, zstd', 'Cookie': 'ajs_anonymous_id=91d5e73a-02a1-4b3a-93ff-ad7056f68969'}
+2025-11-11 02:26:09,704 - __main__ - INFO - Request: GET /download/tmplwgmoh87.jpg
+2025-11-11 02:26:09,704 - __main__ - INFO - Request to download file: tmpr86rcgja.jpg
+2025-11-11 02:26:09,704 - __main__ - INFO - Headers: {'Host': 'localhost:5000', 'Connection': 'keep-alive', 'Sec-Ch-Ua-Platform': '"Windows"', 'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36', 'Sec-Ch-Ua': '"Chromium";v="142", "Brave";v="142", "Not_A Brand";v="99"', 'Sec-Ch-Ua-Mobile': '?0', 'Accept': 'image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8', 'Sec-Gpc': '1', 'Accept-Language': 'es-419,es;q=0.8', 'Sec-Fetch-Site': 'same-site', 'Sec-Fetch-Mode': 'no-cors', 'Sec-Fetch-Dest': 'image', 'Referer': 'http://localhost:5173/', 'Accept-Encoding': 'gzip, deflate, br, zstd', 'Cookie': 'ajs_anonymous_id=91d5e73a-02a1-4b3a-93ff-ad7056f68969'}
+2025-11-11 02:26:09,705 - __main__ - INFO - Resolved path: C:\Users\Filip\OneDrive\Documents\DATA\project-bolt-sb1-m2sjjvyu\EX-tractor\temp\tmpr86rcgja.jpg
+2025-11-11 02:26:09,705 - __main__ - INFO - Request to download file: tmplwgmoh87.jpg
+2025-11-11 02:26:09,705 - __main__ - INFO - Resolved path: C:\Users\Filip\OneDrive\Documents\DATA\project-bolt-sb1-m2sjjvyu\EX-tractor\temp\tmplwgmoh87.jpg
+2025-11-11 02:26:09,706 - __main__ - ERROR - File not found: C:\Users\Filip\OneDrive\Documents\DATA\project-bolt-sb1-m2sjjvyu\EX-tractor\temp\tmplwgmoh87.jpg
+2025-11-11 02:26:09,707 - __main__ - ERROR - File not found: C:\Users\Filip\OneDrive\Documents\DATA\project-bolt-sb1-m2sjjvyu\EX-tractor\temp\tmpr86rcgja.jpg
+2025-11-11 02:26:09,710 - __main__ - INFO - Available files in C:\Users\Filip\OneDrive\Documents\DATA\project-bolt-sb1-m2sjjvyu\EX-tractor\temp: ['extracted_texts.txt', 'instagram_page.png', 'tmp75c871cb.jpg', 'tmp_35sxc05.jpg']
+2025-11-11 02:26:09,711 - __main__ - INFO - Available files in C:\Users\Filip\OneDrive\Documents\DATA\project-bolt-sb1-m2sjjvyu\EX-tractor\temp: ['extracted_texts.txt', 'instagram_page.png', 'tmp75c871cb.jpg', 'tmp_35sxc05.jpg']
+2025-11-11 02:26:09,712 - __main__ - INFO - Response: 404 NOT FOUND {'available_files': ['extracted_texts.txt', 'instagram_page.png', 'tmp75c871cb.jpg', 'tmp_35sxc05.jpg'], 'error': 'File not found', 'requested_file': 'tmplwgmoh87.jpg'}
+2025-11-11 02:26:09,715 - werkzeug - INFO - 127.0.0.1 - - [11/Nov/2025 02:26:09] "[33mGET /download/tmplwgmoh87.jpg HTTP/1.1[0m" 404 -
+2025-11-11 02:26:09,715 - __main__ - INFO - Response: 404 NOT FOUND {'available_files': ['extracted_texts.txt', 'instagram_page.png', 'tmp75c871cb.jpg', 'tmp_35sxc05.jpg'], 'error': 'File not found', 'requested_file': 'tmpr86rcgja.jpg'}
+2025-11-11 02:26:09,715 - werkzeug - INFO - 127.0.0.1 - - [11/Nov/2025 02:26:09] "[33mGET /download/tmpr86rcgja.jpg HTTP/1.1[0m" 404 -
+2025-11-11 02:28:55,807 - werkzeug - INFO -  * Detected change in 'C:\\Users\\Filip\\OneDrive\\Documents\\DATA\\project-bolt-sb1-m2sjjvyu\\EX-tractor\\pruebas\\instagram_service.py', reloading
+2025-11-11 02:28:56,506 - __main__ - INFO - Using temp directory: C:\Users\Filip\OneDrive\Documents\DATA\project-bolt-sb1-m2sjjvyu\EX-tractor\temp
+2025-11-11 02:28:56,506 - __main__ - INFO - Initial files in temp directory: ['extracted_texts.txt', 'instagram_page.png', 'tmp75c871cb.jpg', 'tmp_35sxc05.jpg']
+2025-11-11 02:28:56,525 - werkzeug - WARNING -  * Debugger is active!
+2025-11-11 02:28:56,531 - werkzeug - INFO -  * Debugger PIN: 125-127-887
+2025-11-11 02:33:10,727 - werkzeug - INFO -  * Detected change in 'C:\\Users\\Filip\\OneDrive\\Documents\\DATA\\project-bolt-sb1-m2sjjvyu\\EX-tractor\\pruebas\\instagram_service.py', reloading
+2025-11-11 02:33:11,368 - __main__ - INFO - Using temp directory: C:\Users\Filip\OneDrive\Documents\DATA\project-bolt-sb1-m2sjjvyu\EX-tractor\temp
+2025-11-11 02:33:11,368 - __main__ - INFO - Initial files in temp directory: ['extracted_texts.txt', 'instagram_page.png', 'tmp75c871cb.jpg', 'tmp_35sxc05.jpg']
+2025-11-11 02:33:11,387 - werkzeug - WARNING -  * Debugger is active!
+2025-11-11 02:33:11,391 - werkzeug - INFO -  * Debugger PIN: 125-127-887
+2025-11-11 02:34:10,631 - werkzeug - INFO -  * Detected change in 'C:\\Users\\Filip\\OneDrive\\Documents\\DATA\\project-bolt-sb1-m2sjjvyu\\EX-tractor\\pruebas\\instagram_service.py', reloading
+2025-11-11 02:34:11,277 - __main__ - INFO - Using temp directory: C:\Users\Filip\OneDrive\Documents\DATA\project-bolt-sb1-m2sjjvyu\EX-tractor\temp
+2025-11-11 02:34:11,277 - __main__ - INFO - Initial files in temp directory: ['extracted_texts.txt', 'instagram_page.png', 'tmp75c871cb.jpg', 'tmp_35sxc05.jpg']
+2025-11-11 02:34:11,295 - werkzeug - WARNING -  * Debugger is active!
+2025-11-11 02:34:11,299 - werkzeug - INFO -  * Debugger PIN: 125-127-887
+2025-11-11 02:34:14,589 - werkzeug - INFO -  * Detected change in 'C:\\Users\\Filip\\OneDrive\\Documents\\DATA\\project-bolt-sb1-m2sjjvyu\\EX-tractor\\pruebas\\instagram_service.py', reloading
+2025-11-11 02:34:15,224 - __main__ - INFO - Using temp directory: C:\Users\Filip\OneDrive\Documents\DATA\project-bolt-sb1-m2sjjvyu\EX-tractor\temp
+2025-11-11 02:34:15,225 - __main__ - INFO - Initial files in temp directory: ['extracted_texts.txt', 'instagram_page.png', 'tmp75c871cb.jpg', 'tmp_35sxc05.jpg']
+2025-11-11 02:34:15,242 - werkzeug - WARNING -  * Debugger is active!
+2025-11-11 02:34:15,246 - werkzeug - INFO -  * Debugger PIN: 125-127-887
+2025-11-11 02:51:22,486 - werkzeug - INFO -  * Detected change in 'C:\\Users\\Filip\\OneDrive\\Documents\\DATA\\project-bolt-sb1-m2sjjvyu\\EX-tractor\\pruebas\\instagram_service.py', reloading
+2025-11-11 02:51:23,238 - __main__ - INFO - Using temp directory: C:\Users\Filip\OneDrive\Documents\DATA\project-bolt-sb1-m2sjjvyu\EX-tractor\temp
+2025-11-11 02:51:23,238 - __main__ - INFO - Initial files in temp directory: ['extracted_texts.txt', 'instagram_page.png', 'tmp75c871cb.jpg', 'tmp_35sxc05.jpg']
+2025-11-11 02:51:23,260 - werkzeug - WARNING -  * Debugger is active!
+2025-11-11 02:51:23,265 - werkzeug - INFO -  * Debugger PIN: 125-127-887
+2025-11-11 02:53:06,292 - werkzeug - INFO -  * Detected change in 'C:\\Users\\Filip\\OneDrive\\Documents\\DATA\\project-bolt-sb1-m2sjjvyu\\EX-tractor\\pruebas\\instagram_service.py', reloading
+2025-11-11 02:53:06,928 - __main__ - INFO - Using temp directory: C:\Users\Filip\OneDrive\Documents\DATA\project-bolt-sb1-m2sjjvyu\EX-tractor\temp
+2025-11-11 02:53:06,928 - __main__ - INFO - Initial files in temp directory: ['extracted_texts.txt', 'instagram_page.png', 'tmp75c871cb.jpg', 'tmp_35sxc05.jpg']
+2025-11-11 02:53:06,946 - werkzeug - WARNING -  * Debugger is active!
+2025-11-11 02:53:06,950 - werkzeug - INFO -  * Debugger PIN: 125-127-887
+2025-11-11 02:53:28,262 - werkzeug - INFO -  * Detected change in 'C:\\Users\\Filip\\OneDrive\\Documents\\DATA\\project-bolt-sb1-m2sjjvyu\\EX-tractor\\pruebas\\instagram_service.py', reloading
+2025-11-11 02:53:28,864 - __main__ - INFO - Using temp directory: C:\Users\Filip\OneDrive\Documents\DATA\project-bolt-sb1-m2sjjvyu\EX-tractor\temp
+2025-11-11 02:53:28,865 - __main__ - INFO - Initial files in temp directory: ['extracted_texts.txt', 'instagram_page.png', 'tmp75c871cb.jpg', 'tmp_35sxc05.jpg']
+2025-11-11 02:53:28,882 - werkzeug - WARNING -  * Debugger is active!
+2025-11-11 02:53:28,886 - werkzeug - INFO -  * Debugger PIN: 125-127-887

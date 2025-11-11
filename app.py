@@ -17,12 +17,36 @@ import subprocess
 import json
 from pathlib import Path
 
+# Configure logging first
+logging.basicConfig(
+    level=logging.INFO,
+    format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
+    handlers=[
+        logging.StreamHandler(),
+        logging.FileHandler('app.log', encoding='utf-8')
+    ]
+)
+logger = logging.getLogger(__name__)
+
 # Configure CORS
 cors = CORS()
 
 def create_app():
     app = Flask(__name__)
     cors.init_app(app)
+    
+    # Configure temp directory
+    temp_dir = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'temp')
+    os.makedirs(temp_dir, exist_ok=True)
+    logger.info(f'Using temp directory: {temp_dir}')
+    
+    # Log all available files in temp directory
+    try:
+        files = os.listdir(temp_dir)
+        logger.info(f'Initial files in temp directory: {files}')
+    except Exception as e:
+        logger.error(f'Error listing temp directory: {str(e)}')
+    
     return app
 
 app = create_app()
@@ -61,11 +85,49 @@ os.makedirs(temp_dir, exist_ok=True)
 # Path for the text file to store all extracted text
 text_file_path = os.path.join(temp_dir, 'extracted_texts.txt')
 
+def save_to_temp(content, filename, subdir=''):
+    """
+    Save content to a file in the temp directory.
+    
+    Args:
+        content: Content to save (str or bytes)
+        filename: Name of the file (can include subdirectories)
+        subdir: Optional subdirectory within temp
+        
+    Returns:
+        str: Full path to the saved file
+    """
+    try:
+        # Create full path ensuring it's within temp directory
+        full_dir = os.path.join(temp_dir, subdir) if subdir else temp_dir
+        os.makedirs(full_dir, exist_ok=True)
+        
+        # Sanitize filename
+        safe_filename = os.path.basename(filename)
+        file_path = os.path.join(full_dir, safe_filename)
+        
+        # Ensure we're still within the temp directory
+        if not os.path.commonpath([file_path, temp_dir]) == temp_dir:
+            raise ValueError('Attempt to write outside temp directory')
+        
+        # Write content
+        mode = 'wb' if isinstance(content, bytes) else 'w'
+        encoding = None if isinstance(content, bytes) else 'utf-8'
+        
+        with open(file_path, mode, encoding=encoding) as f:
+            f.write(content)
+            
+        logger.info(f'Saved file to {file_path}')
+        return file_path
+        
+    except Exception as e:
+        logger.error(f'Error saving file {filename}: {str(e)}', exc_info=True)
+        raise
+
 # Ensure the text file exists
 try:
     if not os.path.exists(text_file_path):
-        with open(text_file_path, 'w', encoding='utf-8') as f:
-            f.write('Archivo de textos extraídos\n' + '=' * 30 + '\n\n')
+        save_to_temp('Archivo de textos extraídos\n' + '=' * 30 + '\n\n', 'extracted_texts.txt')
 except Exception as e:
     logger.error(f'Error creating text file: {str(e)}')
 
@@ -114,6 +176,8 @@ def after_request(response):
     return response
 
 def obtener_imagen_instagram(url):
+    logger.info(f'Obteniendo imagen de Instagram para URL: {url}')
+    
     # Configurar Selenium
     chrome_options = Options()
     chrome_options.add_argument("--headless")
@@ -125,14 +189,23 @@ def obtener_imagen_instagram(url):
     # Configurar el navegador para parecer más real
     chrome_options.add_argument("user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36")
     
-    driver = webdriver.Chrome(options=chrome_options)
-    
+    driver = None
     try:
+        logger.info('Iniciando navegador Chrome...')
+        driver = webdriver.Chrome(options=chrome_options)
+        
         # Abrir la URL
+        logger.info(f'Accediendo a la URL: {url}')
         driver.get(url)
         
         # Esperar a que la página cargue completamente
-        time.sleep(5)
+        logger.info('Esperando a que la página cargue...')
+        time.sleep(5)  # Considerar usar WebDriverWait en lugar de time.sleep()
+        
+        # Tomar captura de pantalla para depuración
+        screenshot_path = os.path.join(temp_dir, 'instagram_page.png')
+        driver.save_screenshot(screenshot_path)
+        logger.info(f'Captura de pantalla guardada en: {screenshot_path}')
         
         # Intentar diferentes selectores comunes de Instagram
         selectores = [
@@ -144,45 +217,78 @@ def obtener_imagen_instagram(url):
         ]
         
         img_element = None
-        for selector in selectores:
+        for i, selector in enumerate(selectores, 1):
             try:
+                logger.info(f'Intentando selector {i}/{len(selectores)}: {selector}')
                 elements = driver.find_elements("xpath", selector)
-                for element in elements:
-                    src = element.get_attribute('src')
-                    if src and 'http' in src:
-                        img_element = element
-                        break
+                logger.info(f'Se encontraron {len(elements)} elementos con el selector: {selector}')
+                
+                for j, element in enumerate(elements, 1):
+                    try:
+                        src = element.get_attribute('src')
+                        logger.debug(f'Elemento {j} - src: {src}')
+                        if src and 'http' in src:
+                            img_element = element
+                            logger.info(f'Imagen encontrada con selector {selector}')
+                            break
+                    except Exception as e:
+                        logger.warning(f'Error al obtener atributo src: {str(e)}')
+                        continue
+                        
                 if img_element:
                     break
-            except:
+                    
+            except Exception as e:
+                logger.warning(f'Error con selector {selector}: {str(e)}')
                 continue
         
         if not img_element:
-            # Tomar captura de pantalla para depuración
-            driver.save_screenshot('debug_screenshot.png')
-            print("Se ha guardado una captura de pantalla para depuración: debug_screenshot.png")
-            raise Exception("No se pudo encontrar ningún elemento de imagen con los selectores conocidos")
+            error_msg = "No se pudo encontrar ningún elemento de imagen con los selectores conocidos"
+            logger.error(error_msg)
+            raise Exception(error_msg)
         
         img_url = img_element.get_attribute('src')
         if not img_url:
-            raise Exception("La URL de la imagen está vacía")
+            error_msg = "La URL de la imagen está vacía"
+            logger.error(error_msg)
+            raise Exception(error_msg)
+            
+        logger.info(f'URL de la imagen encontrada: {img_url}')
             
         # Descargar imagen
         headers = {
-            'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36'
+            'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36',
+            'Referer': 'https://www.instagram.com/'
         }
-        response = requests.get(img_url, headers=headers, timeout=10)
+        
+        logger.info('Descargando imagen...')
+        response = requests.get(img_url, headers=headers, timeout=30)
         response.raise_for_status()
         
         img = Image.open(BytesIO(response.content))
-        logger.info(f'Imagen descargada - Dimensiones originales: {img.width}x{img.height}')
+        logger.info(f'Imagen descargada exitosamente - Dimensiones: {img.width}x{img.height}')
+        
+        # Verificar que la imagen sea válida
+        if img.width == 0 or img.height == 0:
+            error_msg = "La imagen descargada no tiene dimensiones válidas"
+            logger.error(error_msg)
+            raise Exception(error_msg)
+            
         return img
 
+    except requests.exceptions.RequestException as e:
+        logger.error(f'Error de red al descargar la imagen: {str(e)}')
+        raise Exception(f"Error de red al descargar la imagen: {str(e)}")
     except Exception as e:
-        print(f"Error al obtener la imagen: {str(e)}")
-        return None
+        logger.error(f'Error al obtener la imagen: {str(e)}', exc_info=True)
+        raise Exception(f"Error al procesar la imagen: {str(e)}")
     finally:
-        driver.quit()
+        if driver:
+            try:
+                driver.quit()
+                logger.info('Navegador cerrado correctamente')
+            except Exception as e:
+                logger.error(f'Error al cerrar el navegador: {str(e)}')
 
 @app.route('/extract-image', methods=['POST'])
 def extract_image():
@@ -193,57 +299,133 @@ def extract_image():
     try:
         img = obtener_imagen_instagram(data['url'])
         if img:
-            # Create a temporary file while preserving original image quality
-            with tempfile.NamedTemporaryFile(delete=False, suffix='.jpg', dir=temp_dir) as temp_file:
-                # Save with maximum quality (100) and original dimensions
-                img.save(temp_file, 'JPEG', quality=100, optimize=True, progressive=True)
-                temp_filename = os.path.basename(temp_file.name)
+            # Create a unique filename with timestamp
+            timestamp = datetime.now().strftime('%Y%m%d_%H%M%S')
+            filename = f'extracted_{timestamp}.jpg'
             
-            # Usar el mismo esquema (http/https) que la petición original
-            scheme = request.headers.get('X-Forwarded-Proto', request.scheme)
-            image_url = f'{scheme}://{request.host}/download/{temp_filename}'
-            logger.info(f'Imagen guardada con dimensiones originales: {img.width}x{img.height}')
+            # Save image to temp directory
+            img_byte_arr = BytesIO()
+            img.save(img_byte_arr, format='JPEG', quality=100, optimize=True, progressive=True)
+            
+            # Generate a unique filename that matches the frontend's expectation
+            # Using the same pattern as before to maintain compatibility
+            import uuid
+            temp_filename = f'tmp{uuid.uuid4().hex[:8]}.jpg'
+            
+            # Save the image directly in the temp root directory
+            file_path = save_to_temp(
+                img_byte_arr.getvalue(),
+                temp_filename
+            )
+            
+            # Generate the URL for the saved image
+            image_url = f'http://{request.host}/download/{temp_filename}'
+            logger.info(f'Imagen guardada: {file_path} ({img.width}x{img.height})')
             
             # Extract text using pytesseract
             try:
-                # Convert image to RGB if it's not
                 if img.mode != 'RGB':
                     img = img.convert('RGB')
                 
-                # Extract text in Spanish and English
                 text = pytesseract.image_to_string(img, lang='spa+eng')
                 
                 if text and text.strip():
-                    logger.info(f'Successfully extracted text: {text[:100]}...')  # Log first 100 chars
+                    logger.info(f'Extraído texto: {text[:100]}...')
                     save_extracted_text(text)
                 else:
-                    logger.info('No text was extracted from the image')
+                    logger.info('No se pudo extraer texto de la imagen')
             except Exception as e:
-                logger.error(f'Error extracting text: {str(e)}', exc_info=True)
-                # Continue even if text extraction fails - we still want to return the image
+                logger.error(f'Error extrayendo texto: {str(e)}', exc_info=True)
             
+            # Return the temporary filename that was actually used
             return jsonify({
                 'success': True,
-                'image_url': image_url
+                'image_url': image_url,
+                'filename': temp_filename,  # Use the actual filename that was saved
+                'file_path': file_path     # For debugging
             })
         else:
             return jsonify({'error': 'No se pudo extraer la imagen'}), 500
     except Exception as e:
-        logger.error(f'Error processing image: {str(e)}', exc_info=True)
-        return jsonify({'error': f'Error al procesar la imagen: {str(e)}'}), 500
+        logger.error(f'Error procesando imagen: {str(e)}', exc_info=True)
+        return jsonify({
+            'error': f'Error al procesar la imagen: {str(e)}',
+            'temp_dir': temp_dir
+        }), 500
 
-# Route to serve downloaded images
-@app.route('/download/<filename>')
+# Route to serve files from temp directory
+@app.route('/download/<path:filename>')
 def download_file(filename):
     try:
-        file_path = os.path.join(temp_dir, filename)
-        if os.path.exists(file_path):
-            return send_file(file_path, mimetype='image/jpeg')
-        else:
-            return jsonify({'error': 'File not found'}), 404
+        # Security: Resolve path and ensure it's within temp directory
+        safe_path = os.path.normpath(os.path.join(temp_dir, filename))
+        
+        # Ensure the resolved path is still within the temp directory
+        if not os.path.commonpath([safe_path, temp_dir]) == temp_dir:
+            logger.error(f'Security violation: Attempt to access path outside temp directory: {filename}')
+            return jsonify({'error': 'Access denied'}), 403
+        
+        logger.info(f'Request to download file: {filename}')
+        logger.info(f'Resolved path: {safe_path}')
+        
+        # Check if file exists and is a file (not a directory)
+        if not os.path.exists(safe_path):
+            # Try to find the file case-insensitively
+            dir_path = os.path.dirname(safe_path)
+            base_name = os.path.basename(safe_path).lower()
+            
+            if os.path.exists(dir_path):
+                # List all files in the directory and find a case-insensitive match
+                for f in os.listdir(dir_path):
+                    if f.lower() == base_name:
+                        safe_path = os.path.join(dir_path, f)
+                        logger.info(f'Found case-insensitive match: {f}')
+                        break
+                else:
+                    logger.error(f'File not found: {safe_path}')
+                    logger.info(f'Available files in {dir_path}: {os.listdir(dir_path) if os.path.exists(dir_path) else "Directory not found"}')
+                    return jsonify({
+                        'error': 'File not found',
+                        'requested_file': filename,
+                        'available_files': os.listdir(temp_dir) if os.path.exists(temp_dir) else []
+                    }), 404
+        
+        if not os.path.isfile(safe_path):
+            logger.error(f'Path is not a file: {safe_path}')
+            return jsonify({'error': 'Path is not a file'}), 400
+        
+        # Determine MIME type based on file extension
+        mime_type = 'application/octet-stream'
+        ext = os.path.splitext(safe_path)[1].lower()
+        if ext in ['.png', '.jpg', '.jpeg', '.gif']:
+            mime_type = 'image/jpeg'
+        elif ext == '.txt':
+            mime_type = 'text/plain; charset=utf-8'
+        elif ext == '.json':
+            mime_type = 'application/json'
+        
+        logger.info(f'Serving file: {safe_path} (MIME: {mime_type})')
+        
+        # Send file with cache headers
+        response = send_file(
+            safe_path,
+            mimetype=mime_type,
+            as_attachment=False,
+            download_name=os.path.basename(safe_path)
+        )
+        
+        # Cache for 1 hour
+        response.headers['Cache-Control'] = 'public, max-age=3600'
+        return response
+        
     except Exception as e:
-        logger.error(f'Error serving file {filename}: {str(e)}')
-        return jsonify({'error': 'Error serving file'}), 500
+        logger.error(f'Error serving file {filename}: {str(e)}', exc_info=True)
+        return jsonify({
+            'error': 'Error serving file',
+            'details': str(e),
+            'temp_dir': temp_dir,
+            'resolved_path': safe_path if 'safe_path' in locals() else 'Not resolved'
+        }), 500
 
 @app.route('/extract-text', methods=['POST', 'OPTIONS'])
 @cross_origin()
@@ -413,92 +595,6 @@ def download_texts():
     except Exception as e:
         logger.error(f'Error serving text file: {str(e)}', exc_info=True)
         return jsonify({'error': f'Error al descargar los textos: {str(e)}'}), 500
-
-@app.route('/get-temp-files')
-def get_temp_files():
-    try:
-        temp_dir = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'temp')
-        
-        # Ensure temp directory exists
-        if not os.path.exists(temp_dir):
-            return jsonify({
-                'success': False,
-                'error': 'El directorio temp no existe',
-                'files': []
-            })
-            
-        # Get all files in temp directory with their metadata
-        files = []
-        for filename in os.listdir(temp_dir):
-            filepath = os.path.join(temp_dir, filename)
-            if os.path.isfile(filepath):
-                file_info = {
-                    'name': filename,
-                    'size': os.path.getsize(filepath),
-                    'modified': os.path.getmtime(filepath),
-                    'path': f'/temp/{filename}'
-                }
-                files.append(file_info)
-        
-        # Sort by modification time (newest first)
-        files.sort(key=lambda x: x['modified'], reverse=True)
-        
-        return jsonify({
-            'success': True,
-            'files': files
-        })
-        
-    except Exception as e:
-        return jsonify({
-            'success': False,
-            'error': str(e),
-            'files': []
-        }), 500
-
-@app.route('/get-latest-file')
-def get_latest_file():
-    try:
-        temp_dir = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'temp')
-        
-        # Ensure temp directory exists
-        if not os.path.exists(temp_dir):
-            return jsonify({
-                'success': False,
-                'error': 'El directorio temp no existe',
-                'content': ''
-            }), 404
-            
-        # Get all files in temp directory
-        files = [os.path.join(temp_dir, f) for f in os.listdir(temp_dir) 
-                if os.path.isfile(os.path.join(temp_dir, f))]
-                
-        if not files:
-            return jsonify({
-                'success': False,
-                'error': 'No hay archivos en el directorio temp',
-                'content': ''
-            }), 404
-            
-        # Get the latest file
-        latest_file = max(files, key=os.path.getmtime)
-        
-        # Read the file content
-        with open(latest_file, 'r', encoding='utf-8') as f:
-            content = f.read()
-            
-        return jsonify({
-            'success': True,
-            'filename': os.path.basename(latest_file),
-            'content': content,
-            'last_modified': os.path.getmtime(latest_file)
-        })
-        
-    except Exception as e:
-        return jsonify({
-            'success': False,
-            'error': str(e),
-            'content': ''
-        }), 500
 
 if __name__ == '__main__':
     app.run(debug=True, port=5000)
