@@ -1,0 +1,51 @@
+version: '3.8'  
+  
+services:  
+  frontend:  
+    build:  
+      context: .  
+      dockerfile: Dockerfile.frontend  
+    ports:  
+      - "3000:3000"  # o "5173:5173" si usas Vite  
+    volumes:  
+      - ./src:/app/src  
+      - ./public:/app/public  
+      - /app/node_modules  
+    environment:  
+      - NODE_ENV=development  
+    depends_on:  
+      - main-app  
+      - instagram-service  
+    networks:  
+      - extractor-network  
+  
+  main-app:  
+    build:  
+      context: .  
+      dockerfile: Dockerfile  
+    ports:  
+      - "5000:5000"  
+    volumes:  
+      - ./temp:/app/temp  
+      - ./gemini:/app/gemini  
+    environment:  
+      - FLASK_ENV=development  
+    networks:  
+      - extractor-network  
+  
+  instagram-service:  
+    build:  
+      context: .  
+      dockerfile: pruebas/Dockerfile.instagram  
+    ports:  
+      - "5001:5001"  
+    volumes:  
+      - ./pruebas/public:/app/public  
+    environment:  
+      - FLASK_ENV=development  
+    networks:  
+      - extractor-network  
+  
+networks:  
+  extractor-network:  
+    driver: bridge

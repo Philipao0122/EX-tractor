@@ -2,7 +2,6 @@ from flask import Flask, jsonify, request, send_from_directory
 from flask_cors import CORS
 import requests
 import os
-import time
 from datetime import datetime
 import logging
 from dotenv import load_dotenv
@@ -166,20 +165,14 @@ def serve_thumbnail(filename):
         logger.error(f"Error serving thumbnail {filename}: {str(e)}")
         return jsonify({"error": "File not found"}), 404
 
-def fetch_instagram_thumbnails(source, request_counter=None):
+def fetch_instagram_thumbnails(source):
     """
     Fetch and save thumbnails for a given Instagram source.
     
     Args:
         source (str): Instagram username or URL (e.g., 'eltiempo' or 'https://www.instagram.com/eltiempo/')
-        request_counter (dict): Dictionary to track request count and limit
     """
     try:
-        # Check request limit
-        if request_counter and request_counter.get('count', 0) >= request_counter.get('limit', 24):
-            logger.warning(f"Request limit of {request_counter['limit']} reached. Skipping {source}")
-            return 0
-            
         # Extract username from URL if a full URL is provided
         if 'instagram.com' in source:
             username = source.split('instagram.com/')[-1].strip('/')
@@ -195,24 +188,11 @@ def fetch_instagram_thumbnails(source, request_counter=None):
         }
         
         headers = {
-            "Scraper-Key": API_KEY,
-            "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.93 Safari/537.36"
+            "Scraper-Key": API_KEY
         }
         
         # Make the API request
-        if request_counter:
-            request_counter['count'] = request_counter.get('count', 0) + 1
-            logger.info(f"API Request #{request_counter['count']} for {username}")
-            
         response = requests.get(INSTAGRAM_API_URL, headers=headers, params=params, timeout=30)
-        
-        # Handle rate limiting
-        if response.status_code == 429:
-            retry_after = int(response.headers.get('Retry-After', 60))
-            logger.warning(f"Rate limited. Waiting {retry_after} seconds before retrying...")
-            time.sleep(retry_after)
-            return fetch_instagram_thumbnails(source, request_counter)
-            
         response.raise_for_status()
         
         # Extract thumbnail URLs
@@ -228,7 +208,7 @@ def fetch_instagram_thumbnails(source, request_counter=None):
         saved_count = 0
         max_thumbnails = 8  # Límite de 8 miniaturas por fuente
         
-        for i, url in enumerate(thumbnail_urls[:max_thumbnails]):
+        for i, url in enumerate(thumbnail_urls[:max_thumbnails]):  # Solo procesar las primeras 8
             if not url:
                 continue
                 
@@ -239,9 +219,6 @@ def fetch_instagram_thumbnails(source, request_counter=None):
             if download_thumbnail(url, save_path):
                 saved_count += 1
                 logger.info(f"Saved thumbnail: {filename}")
-            
-            # Add small delay between downloads
-            time.sleep(0.5)
                 
         if len(thumbnail_urls) > max_thumbnails:
             logger.info(f"Limited to {max_thumbnails} thumbnails out of {len(thumbnail_urls)} available for {username}")
@@ -257,10 +234,7 @@ def fetch_instagram_thumbnails(source, request_counter=None):
         return 0
 
 def fetch_all_sources():
-    """
-    Fetch thumbnails from all configured Instagram sources.
-    Limits the total number of API requests to 24 per execution.
-    """
+    """Fetch thumbnails from all configured Instagram sources."""
     # List of Instagram sources to fetch
     instagram_sources = [
         'eltiempo',
@@ -269,26 +243,16 @@ def fetch_all_sources():
     ]
     
     total_saved = 0
-    request_counter = {
-        'count': 0,
-        'limit': 24  # Limit total API requests to 24
-    }
     
     for source in instagram_sources:
-        if request_counter['count'] >= request_counter['limit']:
-            logger.warning(f"Reached API request limit of {request_counter['limit']}. Stopping...")
-            break
-            
-        saved = fetch_instagram_thumbnails(source, request_counter)
+        saved = fetch_instagram_thumbnails(source)
         total_saved += saved
         
-        # Add a delay between different sources to avoid rate limiting
-        if source != instagram_sources[-1] and request_counter['count'] < request_counter['limit']:
-            delay = 5  # 5 seconds between different sources
-            logger.info(f"Waiting {delay} seconds before next source...")
-            time.sleep(delay)
+        # Add a small delay between requests to avoid rate limiting
+        import time
+        if source != instagram_sources[-1]:  # Don't wait after the last one
+            time.sleep(2)
     
-    logger.info(f"Completed. Made {request_counter['count']} API requests and saved {total_saved} thumbnails in total.")
     return total_saved
 
 if __name__ == '__main__':

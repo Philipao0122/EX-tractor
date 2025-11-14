@@ -1,0 +1,17 @@
+FROM python:3.9-slim  
+  
+WORKDIR /app  
+  
+# Copiar requirements específicos de pruebas  
+COPY pruebas/requirements.txt .  
+RUN pip install --no-cache-dir -r requirements.txt  
+  
+# Copiar el servicio de Instagram  
+COPY pruebas/instagram_service.py .  
+  
+# Crear directorios necesarios  
+RUN mkdir -p public/thumbnails  
+  
+EXPOSE 5001  
+  
+CMD ["python", "instagram_service.py"]

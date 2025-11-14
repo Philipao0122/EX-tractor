@@ -1,0 +1,18 @@
+FROM node:18-alpine  
+  
+WORKDIR /app  
+  
+# Copiar package.json y package-lock.json  
+COPY package*.json ./  
+  
+# Instalar dependencias  
+RUN npm install  
+  
+# Copiar el código fuente  
+COPY . .  
+  
+# Exponer puerto (3000 para Next.js o 5173 para Vite)  
+EXPOSE 3000  
+  
+# Comando para desarrollo  
+CMD ["npm", "run", "dev"]

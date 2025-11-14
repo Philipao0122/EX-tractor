@@ -26,12 +26,12 @@ export default defineConfig({
     host: '0.0.0.0', // Aceptar conexiones de cualquier IP
     proxy: {
       '/api': {
-        target: process.env.VITE_API_URL || 'http://localhost:5000',
+        target: 'http://localhost:5000',
         changeOrigin: true,
         rewrite: (path) => path.replace(/^\/api/, '')
       },
       '/instagram': {
-        target: process.env.VITE_INSTAGRAM_SERVICE_URL || 'http://localhost:5001',
+        target: 'http://localhost:5001',
         changeOrigin: true,
         rewrite: (path) => path.replace(/^\/instagram/, '')
       }

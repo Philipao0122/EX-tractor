@@ -1,0 +1,15 @@
+FROM node:18-alpine
+
+WORKDIR /app
+
+COPY package*.json ./
+
+RUN npm install
+
+COPY . .
+
+# Usar el puerto 3000 para coincidir con la configuración de Docker Compose
+EXPOSE 3000
+
+# Especificar el host y puerto para Vite
+CMD ["npm", "run", "dev", "--", "--host", "0.0.0.0", "--port", "3000"]

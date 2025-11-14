@@ -416,5 +416,4 @@ def download_texts():
         return jsonify({'error': f'Error al descargar los textos: {str(e)}'}), 500
 
 if __name__ == '__main__':
-    port = int(os.environ.get('PORT', 5000))
-    app.run(host='0.0.0.0', port=port, debug=os.environ.get('FLASK_ENV') == 'development')
+    app.run(debug=True, port=5000)
